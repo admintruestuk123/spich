@@ -1,0 +1,1732 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.101.0">
+    <title>Холодка Мус</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/album/">
+    <link rel="icon" href="../Screenshot_1.png" type="image/x-icon">
+
+    
+
+    
+
+<link href="bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+      .modal-body  {
+
+        text-align: left;
+      }
+
+      .py-5 {
+        background:    #474A51;
+      }
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+
+
+      }
+
+       .prokrutka {
+        
+        height: 1400px; /* высота нашего блока */
+        padding: 5px;
+        margin: 5px;
+        text-align: left;
+
+        background: #fff; /* цвет фона, белый #E5E4E2;*/
+        border: 1px solid #C1C1C1; /* размер и цвет границы блока */
+        
+        overflow-y: scroll; /* прокрутка по вертикали */
+      }
+    </style>
+
+    
+  </head>
+  <body>
+    
+
+<main>
+ <script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function() { // событие загрузки страницы
+
+    // выбираем на странице все элементы типа textarea и input
+    document.querySelectorAll('textarea').forEach(function(e) {
+        // если данные значения уже записаны в sessionStorage, то вставляем их в поля формы
+        // путём этого мы как раз берём данные из памяти браузера, если страница была случайно перезагружена
+        if(e.value === '') e.value = window.sessionStorage.getItem(e.name, e.value);
+        // на событие ввода данных (включая вставку с помощью мыши) вешаем обработчик
+        e.addEventListener('input', function() {
+            // и записываем в sessionStorage данные, в качестве имени используя атрибут name поля элемента ввода
+            window.sessionStorage.setItem(e.name, e.value);
+        })
+    })
+
+}); 
+   
+ </script> 
+
+  <section class="py-5 text-center container">
+    <div class="row">
+
+
+        <div class="col">
+
+ 
+          
+      <button type="button"  class="w-100 btn btn-lg btn-danger"  data-bs-toggle="modal" data-bs-target="#obvinenie.bd-example-modal-lg">Обвинения</button>
+
+      <!-- Обвинения П -->
+      
+
+<div class="modal fade bd-example-modal-lg" id="obvinenie" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+     <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">В чём меня обвиняют? Я не должностное лицо! Кем я прохожу по данному делу?</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>Мы вас ни в чём не обвиняем, ваши данные были похищены и ими могут в любой момент воспользоваться мошенники.</h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Обвинения-->
+
+
+
+      <br><br>
+      <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#data.bd-example-modal-lg">Какие данные?</button>
+      <br><br>
+
+      <!-- Modal Какие данные? П+Н-->
+      
+
+<div class="modal fade bd-example-modal-lg" id="data" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+     <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Какие именно данные были украдены?</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>Полный пакет документов который храниться в банковской системе. ( паспортные данные, снилс, номера карт, выписки по счетам и транзакциям, номера телефонов...)
+        </h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Какие данные? П+Н-->
+
+      <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#want.bd-example-modal-lg">Что хотите?</button>
+      <br><br>
+
+      <!-- Modal Что хотите? Н+П -->
+      
+
+<div class="modal fade bd-example-modal-lg" id="want" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+     <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Зачем со мной связались? Чем я могу помочь? Что мне делать? Что вы хотите?</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>- В первую очередь, задать вам несколько вопросов которые могут помочь следствию выяснить
+откуда конкретно происходила утечка данных, в том числе и ваших.
+
+        </h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!--  Modal Что хотите? -->
+
+
+      <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#povestka.bd-example-modal-lg">Повестка</button>
+      <br><br>
+
+      <!-- Modal Повестка Н-->
+      
+<div class="modal fade bd-example-modal-lg" id="povestka" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+     <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Пригласите меня по повестке! Почему не отправили повестку?</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>
+        1) Повестка вашу проблему не решит.
+        <br><br>
+        2) Есть закон, ст. 188 УПК РФ (Порядок Вызова на допрос), то есть, вызываются лица, которые имеют процессуальный статус: потерпевший, свидетель либо подозреваемый, только в этом случае направляется повестка. Так как у вас нет процессуального статуса повестка направлена быть не может.
+        </h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Повестка Н-->
+
+
+      <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#whatbank.bd-example-modal-lg">Какой банк продал? </button>
+      <br><br>
+
+        <!-- Modal Какой банк продал?-->
+
+<div class="modal fade bd-example-modal-lg" id="whatbank" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+     <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Какой банк? Из какого банка продали базу?</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>
+         
+       - На данный момент не известно, но основные подозреваемые – втб, сбер, альфа, газпром, райф.
+        </h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Какой банк продал? -->
+
+
+      <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#toyouwant.bd-example-modal-lg">К Вам хочу</button>
+      <br><br>
+
+      <!-- Modal К Вам хочу -->
+      
+<div class="modal fade bd-example-modal-lg" id="toyouwant" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+     <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Я могу приехать к вам в отделение? </h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>Ваше посещение в управление – проблему не решит. Вас никто не примет, так как у вас нет процессуального статуса и Вас не вызывали. С Вами связались в экстренном порядке для решения Вашей проблемы.
+          <br><br>
+
+        Посещение Управления по предварительной записи или повестке.</h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal К Вам хочу-->
+
+
+      <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#whybanksyou.bd-example-modal-lg">Зачем Банки</button>
+      <br><br>
+
+      <!-- Modal Зачем Банки -->
+      
+<div class="modal fade bd-example-modal-lg" id="whybanksyou" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+     <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Зачем вам информация в каких банках мои данные?</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>
+          Что бы понимать откуда могла произойти утечка ваших данных.
+        </h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Зачем Банки-->
+
+       <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#cbno.bd-example-modal-lg">У ЦБ инфы нет?</button>
+      <br><br>
+
+      <!-- Modal У ЦБ инфы нет? -->
+      
+<div class="modal fade bd-example-modal-lg" id="cbno" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+     <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">ЦБ разве не предоставил информацию в каких банках я обслуживаюсь?</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>
+          ЦБ не имеет права разглашать такую информацию согласно статьи 183 УК РФ (не разглашение банковской, налоговой и коммерческой тайны),а так же информацию необходимо указать с Ваших слов в рапорт.
+        </h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal У ЦБ инфы нет?-->
+
+       <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#confinfa.bd-example-modal-lg">Конф. Инфа</button>
+      <br><br>
+           <!-- Modal Дебет Конф. Инфа -->
+
+<div class="modal fade bd-example-modal-lg" id="confinfa" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+     <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Я не буду говорить в каких банках я обслуживаюсь (это конфиденциальная информация)</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>
+         
+        Название банков не является конфиденциальной информацией, поскольку их разглашение не может вам как либо навредить.
+        </h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#phoneno2.bd-example-modal-lg">Почему по телефону?</button>
+      <br><br>
+           <!-- Modal Такие вопросы не решаются по телефону -->
+
+<div class="modal fade bd-example-modal-lg" id="phoneno2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+     <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Такие вопросы не решаются по телефону. По телефону я свои данные предоставлять не буду!</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>
+         Согласно ст.157 УПК РФ (производство не отложных следственных действий) я имею полное право связаться с вами по телефону, в связи с тем что ситуация экстренная.<br><br>
+
+        Так мы у Вас и не запрашиваем Ваши данные и в принципе запрашивать права не имеем. Мы запрашиваем исключительно ту информацию, которая необходима для дальнейшего разбирательства.
+
+
+        </h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal По телефону не буду -->
+
+
+
+ <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#srokobslughivania.bd-example-modal-lg">Срок обслуживания </button>
+      <br><br>
+           <!-- Modal Срок обслуживания  -->
+
+<div class="modal fade bd-example-modal-lg" id="srokobslughivania" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+     <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Зачем вам информация как давно я обслуживаюсь в своих банках?</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>
+         
+        Что бы понимать за какой период времени произошла утечка ваших персональных данных.
+
+        </h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Срок обслуживания -->
+
+ <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#usloviya.bd-example-modal-lg">Условия </button>
+      <br><br>
+           <!-- Modal Условия  -->
+
+<div class="modal fade bd-example-modal-lg" id="usloviya" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+     <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Зачем вам знать на каких условиях я обслуживаюсь?</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>
+         
+        Мы так же должны понимать на что могут быть нацелены мошенники: на оформление кредита либо на списание ваших личных средств.
+
+        </h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Условия  -->
+
+<button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#myorgans.bd-example-modal-lg">Мои органы</button>
+      <br><br>
+           <!-- Modal Мои органы   -->
+
+<div class="modal fade bd-example-modal-lg" id="myorgans" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+     <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Почему со мной связались не из моего отделения полиции?</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>
+         
+        Ваши территориальные органы власти не уполномочены заниматься данным разбирательством поскольку уголовное дело возбуждено ФСБ и поручение поступило в наше управление. 
+
+        </h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Мои органы  -->
+
+
+<button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#PodachaZaproca.bd-example-modal-lg">Подайте оф. запрос в ЦБ</button>
+      <br><br>
+<!-- Modal Подайте официальный запрос в ЦБ и вам обязаны предоставить инфо   -->
+
+<div class="modal fade bd-example-modal-lg" id="PodachaZaproca" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+     <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Подайте официальный запрос в ЦБ и вам обязаны предоставить инфо</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>
+         
+        Я могу подать официальный запрос в ЦБ, но на его рассмотрение может уйти 2 недели, а у нас время ограничено, поскольку в любой момент могут провести операции от вашего имени.
+
+        </h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Подайте официальный запрос в ЦБ и вам обязаны предоставить инфо  -->
+
+
+<button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#KakOznakomitca.bd-example-modal-lg">Как ознакомится с материалами дела?</button>
+      <br><br>
+<!-- Modal Как я могу ознакомиться с материалами уголовного дела?   -->
+
+<div class="modal fade bd-example-modal-lg" id="KakOznakomitca" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+     <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Как я могу ознакомиться с материалами уголовного дела?</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>
+         
+        Только при личной встречи со следователем, когда вам будет назначен процессуальный статус и вы будете вызваны повесткой.
+
+        </h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Как я могу ознакомиться с материалами уголовного дела?  -->
+
+
+<button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#CmenaPacporta.bd-example-modal-lg">Недавно сменили паспорт</button>
+      <br><br>
+<!-- Modal Недавно сменили паспорт   -->
+
+<div class="modal fade bd-example-modal-lg" id="CmenaPacporta" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+     <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Я недавно паспорт поменял, никаких операций они не смогут совершить</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>
+         
+        Если вы пользуетесь госуслугами, то ваши обновленные паспортные данные могли подтянуться автоматически в банковскую систему.<br><br>
+Если нет госсуслуг – подозреваются сотрудники банка и они могут попросту видоизменять ваши данные.
+
+
+        </h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Недавно сменили паспорт -->
+
+
+<button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#CpicanieBoBpemyaPazgovora.bd-example-modal-lg">Списание во время разговора</button>
+      <br><br>
+<!-- Списание во время разговора   -->
+
+<div class="modal fade bd-example-modal-lg" id="CpicanieBoBpemyaPazgovora" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+     <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Если во время нашего разговора у меня спишут деньги или оформят кредит</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>
+         
+        Запись разговора – это доказательство того, что вы этих действий не совершали. И в случае списания либо кредитования, ЦБ обязан вам возместить все в полном объеме.
+
+        </h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Списание во время разговора -->
+
+
+
+<button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#IHavePersonalManager.bd-example-modal-lg">У меня есть личный менеджер</button>
+      <br><br>
+<!-- У меня есть личный менеджер   -->
+
+<div class="modal fade bd-example-modal-lg" id="IHavePersonalManager" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+     <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">У меня есть личный менеджер</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>
+         
+        Ваш личный менеджер является первым подозреваемым, поскольку он напрямую имеет доступ к вашим персональным данным. Укажите мне ФИО вашего личного менеджера! В первую очередь его проверим.
+
+        </h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal У меня есть личный менеджер -->
+
+
+<button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#NetSMSOCpicanie.bd-example-modal-lg">Не приходило СМС попытки списания</button>
+      <br><br>
+<!-- У Мне смс не приходило, что пытались списать деньги (после провала за 100 к)жер   -->
+
+<div class="modal fade bd-example-modal-lg" id="NetSMSOCpicanie" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+     <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Мне смс не приходило, что пытались списать деньги (после провала за 100 к)</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>
+         
+        Вам смс-оповещение и не придет, поскольку сотрудники банка могли отключить вам уведомление либо поставить переадресацию.
+
+        </h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Мне смс не приходило, что пытались списать деньги (после провала за 100 к)     -->
+
+
+<button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#RazborPosleCpicanya.bd-example-modal-lg">Когда спишут - тогда и будем разбираться</button>
+      <br><br>
+<!-- Когда спишут, оформят кредит, тогда и будем разбираться   -->
+
+<div class="modal fade bd-example-modal-lg" id="RazborPosleCpicanya" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+     <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Когда спишут, оформят кредит, тогда и будем разбираться</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>
+         
+        Если у вас спишут деньги либо оформят кредит разбираться будет поздно. Вам попросту придется выплачивать кредиты. В суде вы доказать ничего не сможете, поскольку все действия будут выполнены от вашего имени.
+
+        </h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Когда спишут, оформят кредит, тогда и будем разбираться     -->
+
+
+<button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#ZablokiryScheta.bd-example-modal-lg">Заблокирую счета</button>
+      <br><br>
+<!-- Заблокирую счета             -->
+
+<div class="modal fade bd-example-modal-lg" id="ZablokiryScheta" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+     <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Заблокирую счета</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>
+         
+        Это вам не поможет, поскольку подозреваются сотрудники банка и им труда не составит разблокировать ваши счета и провести операции от вашего имени.
+
+        </h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Заблокирую счета            -->
+
+
+
+<button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#CBDontWorkWithFizLi.bd-example-modal-lg">ЦБ не работает с физ. лицами</button>
+      <br><br>
+<!-- ЗЦБ не работает с физ. лицами    -->
+
+<div class="modal fade bd-example-modal-lg" id="CBDontWorkWithFizLi" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+     <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">ЦБ не работает с физ. лицами</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>
+         
+        ЦБ является заявителем в этом деле и гарантом вашей финансовой безопасности. И в связи с тем, что ситуация серьезная, ЦБ обязан вам выделить специалиста, который вам поможет решить вашу проблему дистанционно.
+
+        </h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ЦБ не работает с физ. лицами  -->
+
+
+
+<button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#Dorychenia.bd-example-modal-lg">Поручение</button>
+      <br><br>
+<!-- Поручение. Когда и как использовать.    -->
+
+<div class="modal fade bd-example-modal-lg" id="Dorychenia" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+     <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Когда и как использовать</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>
+         
+        <strong>1. Если лох без заборный.</strong><br>
+        После того как ты записал банки и продиктовал свои данные – также я обязан вас ознакомить с официальным документом на основании которого я с вами связался, направлю вам его сейчас в личные сообщения вотсАП, зайдите сейчас и ознакомьтесь с документом, внимательно прочитайте, если в ходе ознакомления будут возникать вопросы задавайте, линию связи при этом не прерывать, я вас ожидаю на линии.<br><br> 
+        
+        <strong>2.Если лох на сомнениях или рубится.</strong><br>
+          2.1. Рубка в начале на приветствии – поручение кидать только когда ты отвел от 3-их лиц и дал провал и объяснил за основные моменты (повестка, вотсАП, телефон), спросил за звонки, мошенничество, провал за банки не звонят (для того чтобы ты начал навязывать свое общение и отвести лоха от мысли сомнений) – только после этого кидаем поручение (также я обязан вас ознакомить с официальным документом на основании которого я с вами связался, направлю вам его сейчас в личные сообщения вотсАП, зайдите сейчас и ознакомьтесь с документом, внимательно прочитайте, если в ходе ознакомления будут возникать вопросы задавайте, линию связи при этом не прерывать, я вас ожидаю на линии, обратите внимание на второю страницу, так как там указано почему с вами связались по мессенджеру) <br><br>
+        
+        Ремарка:  Среднее время ознакомления с поручением нормального лоха 1,5 минуты.<br>
+        Обращать внимание на то что, ознакамливается ли с ним лох (читает вслух, проговаривает определенные моменты, задает вопросы в ходе ознакомления, его реакции при ознакомлении) <br>
+        Если лох не задает вопросы, говорит что вопросов нет и всё понятно, задаём наводящие вопросы для того чтобы понимать читал ли он его вообще (кол-во потерпевших, почему по Вотсапу).
+
+        </h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Поручение. Когда и как использовать.  -->
+
+
+
+       
+
+        </div>
+        <div class="col-7">
+     
+     <div ><button type="button" class="w-100 btn btn-lg btn btn-warning" data-bs-toggle="modal" data-bs-target="#info.bd-example-modal-lg">Информация о клиенте (нужно заполнять)</button></div>
+
+     <div class="modal fade bd-example-modal-lg" id="info" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+     <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Информация о клиенте</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p><textarea class="col-12"  name="comment" cols="100" rows="100" style="font-size: 18px;"></textarea></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Информация о клиенте-->
+
+
+
+  <div > <p><textarea class="col-12"  name="comment" cols="100" rows="10" style="font-size: 18px;"></textarea></p></div> 
+
+  <form action="CB/CB.html" method="post">    
+    <div>        
+      <button class="w-100 btn btn-lg btn btn-primary">Перевести на ЦБ</button>
+    </div>
+  </form>
+
+
+  <div class="prokrutka" role="document">
+
+    
+    
+      
+        <!-- <h5 class="modal-title">Modal title</h5> -->
+        <h3 class="fw-bold mb-0">СПИЧ</h3>
+          <br>
+            <h5 style="text-align: left;">
+
+              Здравствуйте, полиция Вас беспокоит Управление Экономической Безопасности и Противодействия Коррупции, Капитан полиции: ФИО Должность:Оперуполномоченный<br><br>
+
+              Связываемся с Вами по поручению от ФСБ в рамках уголовного дела по факту мошенничества, предусмотренного ст. 159 ч. 3 УК РФ (мошенничество совершенное лицом, с использыванием своего служебного положения)<br><br>
+
+              Прежде чем предоставлю информацию касаемо данного дела, ставлю в известность что разговор будет записан и разглашению 3-м лицам не подлежит согласно ст.310 УК РФ, уточните на данный момент находитесь один либо на момент диалога к Вам могут подойти?<br><br>
+
+              -Заявителем по данному делу являеться ЦБ, который указал в своем заявлении что сотрудниками комерческих банков была скомпрометирована база данных более 200 к граждан. Вы так же попали в этот список, т.е. в данный момент уже пользуются полным пакетов ваших документов, которые вы предоставляли в банк.<br><br>
+
+              Соответственно сейчас с помощью этих данных и доступа к банковской системе сотрудники коммерческих банков могут от Вашего имени и без Вашего ведома списывать личные средства, оформлять кредиты, проводить отмывание денежных средств по счетам.<br><br>
+              Серьезность всей ситуации понимаете?
+              Если нет:<br>
+              Серьезность заключается в том, что все действия выполняются сотрудниками банков от имени САМИХ граждан, т.е., ответственность за те действия которые будут проводиться по Вашим счетам , Вам придется нести самостоятельно, если эту проблему не решить.<br><br>
+              
+               Пример:<br>
+               А это значит, что если на Вас оформят кредит, Вы его будете выплачивать, а если по Вашим счетам будет отмывание денежных средств – это уже уголовно-наказуемо.<br>
+               -В связи с чем хочу уточнить - поступают ли Вам звонки от лиц, которые представляются якобы сотрудниками банка? (Если звонили):<br><br>
+
+              - Какими банками представлялись?<br><br>
+
+              - Какую инфо запрашивали?<br><br>
+              
+               - Как часто поступают звонки?<br>
+               На будущее имейте в виду что ни под каким предлогом Вы не предоставляете паспортные данные, номера карт, пароли,пин коды и т.п. Но в любом случае проблема сейчас заключается не в звонках ,а в том что данными уже пользуются.<br>
+               - Поэтому уточните возможно ранее сталкивались с мошенническими действиями со стороны банка?(такими как неправомерное снятие, перевод) (Если сталкивался):<br>
+               - Вкратце опишите ситуацию, как это произошло?<br>
+               - От какого банка было мошенничество?<br><br>
+              - На какую сумму был причинен материальный ущерб?<br><br>
+              - Как давно это было?<br><br>
+
+              - Обращались ли в банк, либо МВД?<br><br>
+
+              -Как ранее я вам говорил(а)в этом деле сейчас подозреваются сотрудники банков, поскольку фиксируется мошенничество по счетам граждан, к которым имеют доступ только сотрудники банков, следствием были установлены основные подозреваемые это такие организации как(Втб,Сбер,Альфа,Газпром,Райф)так как эти банки ранее были замечены в продаже данных клиентов, поэтому они основные подозреваемые, скажите какая либо из этих организаций может владеть вашими документами на законных основаниях?<br><br>
+
+                           
+              - Так же еще в каких банках могут хранится ваши данные?<br><br>
+                
+              -Возможно ранее обслуживались в каких-либо банках и, соответственно ваши данные там остались?<br><br>
+                
+              -Данной информации достаточно. Сейчас запишите мои данные, что бы вы знали, кто из сотрудников полиции с вами связывается, есть возможность записать? (Должность Оперуполномоченый Капитан полиции ФИО)<br>
+              -Так же в заявлении от Центрального Банка указано следующее, сегодняшним днём, кто-то из сотрудников коммерческих банков пытался оперировать Вашими данными в банковской системе, то есть была попытка списания Ваших средств либо же оформление кредита. И так как это подтверждает тот факт, что в отношении Вас совершаются мошеннические действия со стороны сотрудников коммерческих банков, сейчас Вас необходимо ознакомить с соответствующим документом по поводу данного уголовного дела, поскольку Вы в нём фигурируете.<br><br>
+                
+              -(Ознакомил с поручением) <br><br>
+                
+              А теперь, касательно Вашей проблемы, заниматься ее решением Вы будете с ЦБ по окончанию нашего с Вами разговора, есть понимание что такое ЦБ? <br><br>
+                
+              -(Простыми словами)<br><br>
+                
+              -ЦБ РФ - это главный банк России, которому подчиняются все банки.<br>
+              
+            -Так вот, ЦБ предоставит Вам сотрудника ДБ. Этот человек обязан проинформировать Вас в полном объёме и предоставить Вам порядок действий по финансовой безопасности, чтобы в данной ситуации Вы финансово не пострадали, и не понесли ответственность за действия, которые не совершали.<br><br>
+              -Информация с моих слов была понятна, либо же что-то необходимо разъяснить, возможно есть вопросы?<br><br>
+              
+              -Сейчас я обязан соединить с сотрудником ДБ ЦБ по линии связи, которая была выделена государством для борьбы с мошенничеством. Но прежде, чем вас соединить, объясните проблему своими словами, чтобы я понимал, насколько корректно донёс до вас информацию.<br><br>
+              
+              -Ответ лоха (Не полный):<br><br>
+              (даешь закреп)<br><br>
+              
+              -(Подозреваются сотрудники коммерческих банков, которые имеют доступ к системе банка и к вашим данным могут либо украсть ваши деньги, либо оформить кредит, или по вашим счетам может быть отмывание денежных средств. И чтобы себя финансово обезопасить вам необходимо провести работу с ДБЦБ, я вас и буду с ними соединять) <br><br>
+                
+              -Ответ лоха (Нет проблем):<br><br>
+                
+              - (Ваша проблема в первую очередь заключается в том, что вашими данными пользуются, и в этом подозреваются именно сотрудники комерческих банков, посколько только у них есть доступ к вашим данным и к бонковской системе, с помощью чего они могут списывать ваши деньги, могут оформлять на вас кредиты от вашего имени и без вашего ведома, в худшем случае проводить отмывание денежных средств по вашим счетам, что уже в первую очередь уголовно наказуемо! Тем более, что сегодняшним днём уже была попытка не правомерных действий-цб её вовремя преостановил. Но в дальнейшем данные попытки могут и будут продолжаться. И вот чтобы вам себя финансово обезопасить-необходимо провести работу с ДБЦБ, я вас и буду с ними соединять. Так вам более понятно? Возможно вопросы возникают?)<br><br>
+              - Хорошо, в таком случае, если вопросов у вас не осталось, Вас я так же благодарю за сотрудничество и предоставленную информацию.<br><br>
+              - Так же напоминаю о статье 310 УК РФ (Неразглашение данных предварительного расследования),, т.е. пока ведется разбирательство и оперативно разыскные мероприятия, информацию, которую Вы получили в ходе беседы со мной и в последующем, вы не разглашаете третьим лицам (знакомым, коллегам, а также членам Вашей семьи), по сколько сейчас любое разглашение подследственной информации может повлиять на ход следствия. Думаю, вы и сами это понимаете.<br><br>
+              - Тогда желаю вам удачи в решении проблемы, соединение с ЦБ занимает до 1 одной минуты, линию связи не прерывайте, всего доброго!<br><br>
+
+
+              <!---А теперь, касательно решения вашей проблемы:<br><br>-->
+
+              <!---Кто-то из недобросовестных сотрудников банка, это может быть как один так и группа лиц, имея доступ к вашим данным и пользуясь своим служебным положением пробовал выполнить неправомерные действия по отношению к вам. Это могла быть как попытка хищения так и попытка кредитования, но ЦБ нам не указал, что конкретно произошло. При этом они акцентировали внимание на том, что материальный ущерб вам причинён не был, то есть данная попытка была вовремя приостановлена, но в дальнейшем они могут и будут продолжаться до момента, пока Вы не решите данную проблему под руководством специалиста ЦБ. <br><br>-->
+
+              <!---ЦБ полностью предоставит вам порядок действий по финансовой безопасности, так же вам будет выделен сотрудник ДБ который будет нести как материальную так и уголовную ответственность, чтобы вы также не стали заложником ситуации<br><br>-->
+
+              <!---С моих слов всё было понятно, вопросы возражения остались?<br><br>-->
+
+              <!---Со своей стороны я обязан сейчас соединить Вас с ДБ ЦБ для решения Вашей проблемы.<br><br>-->
+
+              <!--Для отчетности моей работы вкратце объясните проблему своими словами и как Вы ее понимаете.<br><br>-->
+              <!--Если не понял:<br>-->
+              <!--(Подозреваются сотрудники коммерческих банков, которые имеют доступ к системе банка и к вашим данным могут либо украсть ваши деньги, либо оформить кредит, или по вашим счетам может быть отмывание денежных средств. И чтобы себя финансово обезопасить вам необходимо провести работу с ДБЦБ, я вас и буду с ними соединять)<br><br>-->
+
+              <!--- Вопросы ко мне остались?<br><br>-->
+              <!---Еще раз предупреждаю вас об ответственности за разглашение данных 3-им лицам согласно статье 310 УК РФ (разглашение данных предварительного расследования).друзьям родственникам коллег по работе<br><br>-->
+
+              <!---Тогда оставайтесь на линии, ожидайте подключение департамента безопасности, соединение займет не более 1 минуты линию связи не перерывайте<br><br>-->
+
+            
+            </h5>
+            
+  </div>
+  
+
+
+        </div>
+        <div class="col">
+          <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#whatsapp.bd-example-modal-lg">Почему WhatsApp?</button>
+      <br><br>
+
+              <!-- Modal Почему WhatsApp?-->
+
+<div class="modal fade bd-example-modal-lg" id="whatsapp" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+     <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Почему звоните по ВОТС АПУ?</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h5>
+          Согласно статье 10 федерального закона №149 о защите информации, а так же согласно поручения по которому мы с Вами связались.
+        </h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Почему Ватс апп?-->
+
+
+          <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#otdeleniebank.bd-example-modal-lg">Отделение Банка</button>
+      <br><br>
+                         <!-- Modal Отделение Банка-->
+
+            <div class="modal fade bd-example-modal-lg" id="otdeleniebank" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                 <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Почему я не могу обратиться в свое отделения банка?</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <h5>
+                      Сотрудники коммерчески банков – первые подозреваемые. И нет гарантий, что при обращении Вы не попадете именно на мошенников. 
+                      В первую очередь навредите себе, во вторую – повлияете на ход следствия, что уже уголовно наказуемо(294 УК РФ)
+
+                    </h5>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal Отделение Банка-->
+
+
+          <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#zastrahovano.bd-example-modal-lg">Застраховано</button>
+      <br><br>
+        <!-- Modal Застраховано-->
+
+            <div class="modal fade bd-example-modal-lg" id="zastrahovano" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                 <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">У меня все застраховано!</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <h5>
+                      Объясняю вам, на данный момент мошенничество от самого банка. Банк от самого себя не страхует. Тем более все действия будут от вашего имени и доказать то, что эти действия проводили не вы - мы просто не сможем.
+
+                    </h5>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal Застраховано-->
+
+          <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#whycb.bd-example-modal-lg">Почему ЦБ?</button>
+       <br><br>
+
+       <!-- Modal Почему ЦБ?-->
+
+            <div class="modal fade bd-example-modal-lg" id="whycb" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                 <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Почему этим занимается ЦБ, а не моя банковская структура?</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <h5>
+                      В первую очередь потому, что мошенничество проходит от тех структур, где вы клиент и тем более ЦБ РФ - это главный банк России, которому подчиняются все банки.
+                      <br><br>
+                      Потому как, подозреваются как сотрудники отделений банка, так и сотрудники СБ. Именно поэтому этим делом будет заниматься ЦБ.
+                    </h5>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal Почему ЦБ?-->
+
+          <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#numberphone.bd-example-modal-lg">Номер телефона</button>
+        <br><br>
+        <!-- Modal Номер телефона-->
+
+            <div class="modal fade bd-example-modal-lg" id="numberphone" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                 <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">С какого номера вы мне звоните?</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <h5>
+                     Я связываюсь с вами по федеральная линия связи, она защищена и не может быт прослушана, а вы сами понимаете, что вам предоставляется подследственная информация и нельзя чтобы она вышла за рамки нашего разговора. 
+                    </h5>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+        <!-- Modal Номер телефона-->
+
+          <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#mymoney.bd-example-modal-lg">Снять деньги</button>
+         <br><br>
+
+          <!-- Modal Снять деньги-->
+
+            <div class="modal fade bd-example-modal-lg" id="mymoney" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                 <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Могу ли я пойти снять деньги?  А я пойду сниму свои деньги и у меня ничего не украдут!</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <h5>
+                      Смысла в этом нет, поскольку мошенничество проходит со стороны банка и этим действием вы можете повлиять на ход следствия. 
+                      Вам лучше все банковские операции проводить под руководством сотрудника ЦБ, так как это их сфера деятельности.<br><br>
+
+                      у меня нет денег на счетах - проблема не в том есть у вас деньги или нет, а в том что по вашим данным могут оформить на вас кредит.
+                    </h5>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+        <!-- Modal Снять деньги-->
+
+
+
+         <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#mysledak.bd-example-modal-lg">Кто мой следователь?</button>
+         <br><br>
+          <!-- Modal Кто мой следователь?-->
+
+                      <div class="modal fade bd-example-modal-lg" id="mysledak" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                           <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Кто мой следователь?</h5>
+                              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <h5>
+                                Поручение подписано начальником Управления ФСБ России по Москве и Московской области Дорофеевым Алексеем Николаевичем, Ф.И.О следователя мне неизвестно, поскольку над этим делом работает соответствующая следственная группа.
+                              </h5>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  <!-- Modal Кто мой следователь?-->
+
+          <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#uznayuprovas.bd-example-modal-lg">Узнаю про Вас</button>
+         <br><br>
+         <!-- Modal Узнаю про Вас-->
+
+                      <div class="modal fade bd-example-modal-lg" id="uznayuprovas" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                           <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Позвоню в управление, узнаю есть ли такой опер</h5>
+                              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <h5>
+                               Без моего предварительного запроса никакую информацию о оперативном сотруднике не предоставят. Дежурная часть принимает вызовы и заявления от граждан по факту происшествий и никакой информации вам не предоставят об штате сотрудников.
+                              </h5>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  <!-- Modal Узнаю про Вас-->
+
+
+         <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#zvonilimusora.bd-example-modal-lg">Уже мусора звонили</button>
+         <br><br>
+
+         <!-- Modal Если звонили мусора-->
+
+                      <div class="modal fade bd-example-modal-lg" id="zvonilimusora" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                           <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Если звонили мусора</h5>
+                              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <h5>
+                                С какого управления звонили? Кем представились? Что спрашивали? Инфо конфиденциального х-ра у вас  запрашивали? Если да – то это были мошенники.<br><br>
+                                Если нет -- поручения поступает в различные управления. Звонки от полиции Вам не перестанут поступать, пока вы не решите этот вопрос. А сейчас мы руководствуемся ст. 13 пункта 36 закона о полиции, когда дело не требует отлагательств
+
+                              </h5>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  <!-- Modal Если звонили мусора-->
+
+         <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#kakoformyatcredit.bd-example-modal-lg">Как оформят кредит?</button>
+         <br><br>
+         <!-- Modal Как оформят кредит?-->
+
+                      <div class="modal fade bd-example-modal-lg" id="kakoformyatcredit" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                           <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">                                           Как оформят кредит без моего физ. присутствия?</h5>
+                              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <h5>
+                                Поскольку в мошенничестве подозреваются сотрудники коммерческих банков, у них имеется доступ к банковской с-ме и к вашим персональным данным. У них есть доступ к системе банка, с помощью чего они могут совершить вход в Ваш личный кабинет и оформить кредит.
+
+                              </h5>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  <!-- Modal Как оформят кредит?-->
+                  
+          <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#dokagite.bd-example-modal-lg">Докажите, что вы МВД</button>
+         <br><br>
+
+         <!-- Modal Докажите, что вы МВД-->
+
+                      <div class="modal fade bd-example-modal-lg" id="dokagite" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                           <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">                                           Как вы докажите, что сотрудник МВД?</h5>
+                              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <h5>
+                               На чем основаны Ваши сомнения…?
+
+                              </h5>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  <!-- Modal Докажите, что вы МВД-->
+
+         <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#howlong.bd-example-modal-lg">Долго еще?</button>
+         <br><br>
+
+         <!-- Modal Долго еще?-->
+
+                      <div class="modal fade bd-example-modal-lg" id="howlong" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                           <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Долго времени займет?</h5>
+                              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <h5>
+                                На этот вопрос ответить вам не могу. Всё будет зависит от сложности вашей ситуации. Поэтому я вас попрошу уделить время, поскольку речь идет о вашей фин. безопасности.
+
+                              </h5>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  <!-- Modal Долго времени займет?-->
+
+         <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#utechkacombank.bd-example-modal-lg">Утечка от ком.банков?</button>
+         <br><br>
+
+         <!-- Modal Утечка от ком.банков?-->
+
+                      <div class="modal fade bd-example-modal-lg" id="utechkacombank" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                           <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">С чего вы взяли, что утечка произошла именно с коммерческого банка?</h5>
+                              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <h5>
+                                ЦБ указал, что был украден тот пакет документов, который хранится именно в банковской с-ме. На основании жалоб граждан, была проведена проверка системы банка, в процессе которой это и выявлено.
+
+
+                              </h5>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  <!-- Modal Утечка от ком.банков?-->
+
+                   <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#k100.bd-example-modal-lg">100К</button>
+         <br><br>
+
+         <!-- Modal 100К-->
+
+                      <div class="modal fade bd-example-modal-lg" id="k100" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                           <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">                                           Провал за 100 к ( если нет ЗП, если малолетка или хач)</h5>
+                              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <h5>
+                                В заявлении от ЦБ указано, что сегодняшним днем у вас была попытка хищения на сумму 100 к. У вас могли списать данную сумму в каком-либо из банков? <strong>(нужно услышать конкретный ответ ( да или нет) , если что - переспрашивает)</strong>
+
+
+                              </h5>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  <!-- Modal 100К-->
+         
+                   <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#OtobrazKakMochennik.bd-example-modal-lg">Номер отображается как ...</button>
+         <br><br>
+
+         <!-- Отображается как мошенники ...-->
+
+                      <div class="modal fade bd-example-modal-lg" id="OtobrazKakMochennik" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                           <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Номер отображается как …</h5>
+                              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <h5>
+                                Забор 18 (полностью) Номер генерируется в случайном порядке. Я сам не имею понятие с какого номера я с вами связываюсь.
+
+
+                              </h5>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  <!-- Отображается как мошенники ...-->
+
+
+                   <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#ZvonokYuricty.bd-example-modal-lg">Обращусь к юристу</button>
+         <br><br>
+
+         <!-- Обращусь к юристу-->
+
+                      <div class="modal fade bd-example-modal-lg" id="ZvonokYuricty" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                           <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Обращусь к юристу</h5>
+                              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <h5>
+                                А чем он вам поможет? Ваш юрист является 3-им лицом.
+
+
+                              </h5>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  <!-- Обращусь к юристу-->
+
+
+
+
+                   <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#DataOnWeb.bd-example-modal-lg">Данные давно в доступе</button>
+         <br><br>
+
+         <!-- Данные давно уже в свободном доступе!-->
+
+                      <div class="modal fade bd-example-modal-lg" id="DataOnWeb" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                           <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Данные давно уже в свободном доступе!</h5>
+                              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <h5>
+                                В мошенничестве подозревается не просто человек с улицы, который владеет Вашими паспортными данными, а именно сотрудник банка, у которого есть доступ к банковской системе и Вашим данным.
+
+
+                              </h5>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  <!-- Данные давно уже в свободном доступе!-->
+
+
+                   <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#DoYouKnow.bd-example-modal-lg">Вы уверены, что я тот, кому вы звоните?</button>
+         <br><br>
+
+         <!-- Как вы можете быть уверены, что я именно тот, кому вы звоните?-->
+
+                      <div class="modal fade bd-example-modal-lg" id="DoYouKnow" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                           <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Как вы можете быть уверены, что я именно тот, кому вы звоните?</h5>
+                              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <h5>
+                                Номер телефона, по которому я связываюсь, зарегистрирован на Ваше ФИО. Я вам ничего не собираюсь доказывать, проблема у вас! Почему вы тогда диалог со мной ведете, если это не вы?
+
+                              </h5>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  <!-- Как вы можете быть уверены, что я именно тот, кому вы звоните?-->
+
+
+
+                   <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#SendKciva.bd-example-modal-lg">Скиньте мне удостоверение!</button>
+         <br><br>
+
+         <!-- Скиньте мне удостоверение!-->
+
+                      <div class="modal fade bd-example-modal-lg" id="SendKciva" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                           <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Скиньте мне удостоверение!</h5>
+                              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <h5>
+                                Удостоверение нельзя даже передавать в руки 3 лицам, а Вы хотите, чтобы я отправил фото, после чего оно может быть скомпромитировано или использовано в незаконных целях.
+
+                              </h5>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  <!-- Скиньте мне удостоверение!-->
+
+
+
+                   <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#WhyCallCop.bd-example-modal-lg">Почему звонит полиция?</button>
+         <br><br>
+
+         <!-- Почему мне звонит полиция, если проблема в банке?-->
+
+                      <div class="modal fade bd-example-modal-lg" id="WhyCallCop" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                           <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Почему мне звонит полиция, если проблема в банке?</h5>
+                              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <h5>
+                                Потому что возбуждено уголовное дело по факту мошеничества в отношении коммерческих банков. И проблема не в банке, а именно у Вас, как у клиента коммерческого банка.
+
+                              </h5>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  <!-- Почему мне звонит полиция, если проблема в банке?-->
+
+
+
+                   <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#GolosovoiOtkaz.bd-example-modal-lg">Голосовой отказ</button>
+         <br><br>
+
+         <!-- Голосовой отказ-->
+
+                      <div class="modal fade bd-example-modal-lg" id="GolosovoiOtkaz" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                           <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Голосовой отказ</h5>
+                              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <h5>
+                                У Вас есть выбор, либо Вы решаете свою проблему, либо всю материальную и возможно уголовную ответственность будете нести самостоятельно. А это значит, что если на Вас оформят кредит, Вы его будете выплачивать, а если по Вашим счетам будет отмывание денежных средств – это уже уголовно-наказуемо.<br><br>
+                                Я вас уговаривать не собираюсь, речь идет о Вашей финансовой безопасности. Не хотите сотрудничать – в таком случае предоставьте голосовой отказ под запись разговора. Запись диалога – прямое доказательство того, что с Вами связывались и предоставляли помощь в решении данной проблемы. Выбирайте!<br><br>
+                                (если выбрал голосовой) <br>
+                                Назовите полное ФИО и говорите, что отказываетесь от сотрудничества с правоохранительными органами! В дальнейшем за все действия по вашим счетам будете отвечать самостоятельно.
+
+                              </h5>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  <!-- Голосовой отказ-->
+
+
+
+                   <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#WhenDeloVozbydili.bd-example-modal-lg">Когда было возбуждено дело?</button>
+         <br><br>
+
+         <!-- Когда было возбуждено уголовное дело?-->
+
+                      <div class="modal fade bd-example-modal-lg" id="WhenDeloVozbydili" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                           <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Когда было возбуждено уголовное дело?</h5>
+                              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <h5>
+                                Уголовное дело было возбуждено 18 ноября (в поручении указано). За это время у меня ничего же не списали – каждый день ЦБ подает обновленные списки тех людей, который попали под факт мошенничества.
+
+                              </h5>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  <!-- Когда было возбуждено уголовное дело?-->
+
+
+
+                  <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#Moshennichestvo.bd-example-modal-lg">Мошенничество</button>
+         <br><br>
+
+         <!-- Мошенничество-->
+
+                      <div class="modal fade bd-example-modal-lg" id="Moshennichestvo" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                           <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Мошенничество</h5>
+                              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <h5>
+                                <strong>1.Если списали деньги с карты:</strong><br>
+                                - Каким образом у вас списали деньги с карты? Возможно перед списанием с вами связывались и представлялись якобы сотрудниками банка либо смс-оповещение какое-либо приходило?<br><br>
+                                - Какую инфо вам предоставляли (у вас запрашивали)? Какого содержания было смс?<br><br>
+                                - С карты какого банка списали деньги?<br><br>
+                                <strong>2. Если пришла смс со ссылкой:</strong><br>
+                                - С какого номера вам поступило смс: с мобильного либо с официального номера банка?<br><br>
+                                - Какого содержания было смс?<br><br>
+                                - Каким образом у вас списали деньги? Возможно, перейдя по этой ссылке, вы вводили данные своей карты 
+                                ( номер карты, срок действия, СVV код) либо паспортные данные? <br><br>
+
+                              </h5>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  <!-- Мошенничество-->
+                  
+                  <button type="button" class="w-100 btn btn-lg btn-danger" data-bs-toggle="modal" data-bs-target="#CBUchebka.bd-example-modal-lg">Перевод на ЦБ Учебку</button>
+         <br><br>
+
+         <!-- Перевод на ЦБ учебку-->
+
+                      <div class="modal fade bd-example-modal-lg" id="CBUchebka" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                           <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Перевод на ЦБ Учебку</h5>
+                              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <h5>
+                                В таком случае, я буду подавать запрос на Центральный Банк чтобы они с вами связались, в течении одной двух минут вам будет поступать звонок по второй линни, меня поставьте в известность.<br>
+                        
+
+                              </h5>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  <!-- Перевод на ЦБ учебку-->
+
+
+
+        </div>
+    </div>
+
+  </section>
+
+ 
+
+
+
+
+
+
+
+
+    
+    </div>
+  </div>
+
+</main>
+
+
+
+
+    <script src="bootstrap.bundle.min.js"></script>
+
+    
+
+      
+  </body>
+</html>
